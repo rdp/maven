@@ -1506,8 +1506,7 @@ public class MavenCli
     }
 
     // Visible for testing
-    static void performProfileActivation( final CommandLine commandLine,
-                                          final ProfileActivation profileActivation )
+    static void performProfileActivation( final CommandLine commandLine, final ProfileActivation profileActivation )
     {
         if ( commandLine.hasOption( CLIManager.ACTIVATE_PROFILES ) )
         {
