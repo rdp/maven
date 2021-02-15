@@ -285,6 +285,13 @@ public class DefaultGraphBuilder
 
             result = new ArrayList<>( projects );
             result.removeAll( excludedProjects );
+
+            if ( result.isEmpty() )
+            {
+                String message = String.format( "The project exclusion%s in --projects/-pl resulted in an "
+                        + "empty reactor, please correct them.", excludedProjects.size() > 1 ? "s" : "" );
+                throw new MavenExecutionException( message, request.getPom() );
+            }
         }
 
         return result;
